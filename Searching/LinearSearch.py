@@ -1,10 +1,20 @@
-from jovian.pythondsa import evaluate_test_cases
 
+# Listing all of the possible edge cases:
+"""
+1.) query is the middle of cards.
+2.) query is the first element in the card
+3.) query is the last element in the card
+5.) cards does not contain query
+6.) cards is empty
+7.) cards contain repeated elements
+8.) multiple query elements present in the card
+"""
+
+from jovian.pythondsa import evaluate_test_cases
 
 # Brute force
 
 # Signature function
-
 """ def locate_card(cards,query):
     # creating a variable for index of cards
     position = 0 #initially setting the position 0 -> to start from first element in the cards
@@ -30,20 +40,8 @@ from jovian.pythondsa import evaluate_test_cases
             return-1
   """
 
-# signature function
-def  locate_card(cards,query):
-    # variable to keep track of index
-    position = 0
-    # tackling if cards is empty -> 0 < 0 : False
-    print('cards:', cards)
-    print('query:', query)
-    while position < len(cards): 
-        if cards[position] == query:
-            return position
-        position += 1
-    return -1
-        
 test = []
+
 
 # query is the middle of cards.
 test.append({
@@ -117,5 +115,22 @@ test.append({
     'output': 0
     
 })
+
+
+# signature function
+def  locate_card(cards,query):
+    # variable to keep track of index
+    position = 0
+
+    # tackling if cards is empty -> 0 < 0 : False
+    print('cards:', cards)
+    print('query:', query)
+
+    while position < len(cards): 
+        if cards[position] == query:
+            return position
+        position += 1
+    return -1
+        
 
 evaluate_test_cases(locate_card, test)
