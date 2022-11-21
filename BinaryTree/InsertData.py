@@ -1,7 +1,5 @@
 # SIMPLE WAY OF CONNECTING NODE:
 # We will be using "tuples" in order to "connect nodes"
-
-
 # Convention: left-subtree, root/parent, right-subtree
 
 class TreeNode:
